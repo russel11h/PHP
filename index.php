@@ -45,7 +45,7 @@ echo "<br>";
     echo "<br>";
 echo "Question 5";
 echo "<br>";
-for ($i = 1; $i <= 100; $i++) {
+for ($i = 10; $i <= 100; $i++) {
         if ($i%2==1) {
             echo "$i is an odd number.<br>";
         } 
