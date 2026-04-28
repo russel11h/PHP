@@ -67,7 +67,8 @@
     </form>
 
     <?php if ($_SERVER["REQUEST_METHOD"] == "POST" &&
-    empty($fnameErr) && empty($lnameErr) && empty($emailErr) && empty($numberErr) && empty($passwordErr)): ?>
+    empty($fnameErr) && empty($lnameErr) && empty($emailErr) && empty($numberErr) && empty($passwordErr)): 
+    ?>
     <h3>Submitted values</h3>
     <table class="result-table">
         <tr><td>First Name</td><td><?= $fname ?? '' ?></td></tr>
