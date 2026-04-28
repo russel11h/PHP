@@ -27,8 +27,7 @@
                     <span class="error"><?= $fnameErr ?? '' ?></span>
                 </td>
             </tr>
-
-          <tr>
+            <tr>
                 <td>Last Name: <span class="required">*</span></td>
                 <td>
                     <input type="text" name="lname" value="<?= $lname ?? '' ?>">
@@ -36,6 +35,19 @@
                 </td>
             </tr>
           <tr>
+            <tr>
+            <td><label for="number">Contact Number:</label></td>
+            <td><input type="tel" id="number" name="number" value="<?= $number ?? '' ?>">
+                <span class="error"><?= $numberErr ?? '' ?></span></td>
+          </tr>
+          <tr>
+            <td>Age: <span class="required">*</span></td>
+            <td><input type="number" name="age" value="<?= $age ?? '' ?>">
+                <span class="error"><?= $ageErr ?? '' ?></span></td>
+            </td>
+          </tr>
+
+          
             <td>Email <span class="required">*</span></td>
                 <td>
                     <input type="text" name="email" value="<?= $email ?? ''?>">
@@ -43,11 +55,7 @@
                 </td>
             </tr>
 
-          <tr>
-            <td><label for="number">Contact Number:</label></td>
-            <td><input type="tel" id="number" name="number" value="<?= $number ?? '' ?>">
-                <span class="error"><?= $numberErr ?? '' ?></span></td>
-          </tr>
+          
 
           <tr><td>
             <label>Password:</label></td>
@@ -67,12 +75,13 @@
     </form>
 
     <?php if ($_SERVER["REQUEST_METHOD"] == "POST" &&
-    empty($fnameErr) && empty($lnameErr) && empty($emailErr) && empty($numberErr) && empty($passwordErr)): 
+    empty($fnameErr) && empty($lnameErr) && empty($ageErr) && empty($emailErr) && empty($numberErr) && empty($passwordErr)): 
     ?>
     <h3>Submitted values</h3>
     <table class="result-table">
         <tr><td>First Name</td><td><?= $fname ?? '' ?></td></tr>
         <tr><td>Last Name</td><td><?= $lname ?? '' ?></td></tr>
+        <tr><td>Age</td><td><?= $age ?? '' ?></td></tr>
         <tr><td>Email</td><td><?= $email ?? '' ?></td></tr>
         <tr><td>Contact Number</td><td><?= $number ?? '' ?></td></tr>
         <tr><td>Password</td><td><?= $password ?? '' ?></td></tr>

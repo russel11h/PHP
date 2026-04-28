@@ -43,6 +43,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $numberErr = "Invalid contact number";
         }
     }
+    if (empty($_POST["age"])) {
+        $ageErr = "Age is required";
+    } else {
+        $age = cleanInput($_POST["age"]);
+        if (!is_numeric($age) || $age < 0) {
+            $ageErr = "Invalid age";
+        }
+    }
+    if (empty($_POST["number"])) {
+        $numberErr = "Contact number is required";
+    } else {
+        $number = cleanInput($_POST["number"]);
+        if (!preg_match("/^[0-9]{11}$/", $number)) {
+            $numberErr = "Invalid contact number";
+        }
+    }
 
     if (empty($_POST["password"])) {
         $passwordErr = "Password is required";
