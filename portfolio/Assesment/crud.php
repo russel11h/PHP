@@ -3,7 +3,7 @@
 $DB_HOST = "localhost";
 $DB_USER = "root";
 $DB_PASS = "";          // XAMPP's default MySQL password is empty
-$DB_NAME = "school";
+$DB_NAME = "amazondb";
 
 $conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 if (!$conn) {
