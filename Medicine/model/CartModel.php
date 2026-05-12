@@ -1,6 +1,6 @@
 <?php
 // ================================================================
-// CART MODEL
+// CART MODEL edited by: rasel
 // ================================================================
 function getCartItems($conn, $userId) {
     $stmt = mysqli_prepare($conn, "SELECT c.id cart_id, c.quantity, m.*, cat.name category_name FROM cart c JOIN medicines m ON c.medicine_id=m.id JOIN categories cat ON m.category_id=cat.id WHERE c.user_id=? ORDER BY c.id DESC");
