@@ -51,4 +51,17 @@ function cartCount($conn, $userId) {
     mysqli_stmt_close($stmt);
     return intval($row['c'] ?? 0);
 }
+
+
+// Dummy  function created by shawon
+function cartItemCount($conn, $userId, $medicineId) {
+    $stmt = mysqli_prepare($conn, "SELECT quantity FROM cart WHERE user_id=? AND medicine_id=?");
+    mysqli_stmt_bind_param($stmt, 'ii', $userId, $medicineId);
+    mysqli_stmt_execute($stmt);
+    $row = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+    mysqli_stmt_close($stmt);
+    return intval($row['quantity'] ?? 0);
+}
+
+
 ?>
